@@ -1,7 +1,9 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { EventsService } from './events.service';
 import { NotificationService } from '../notifications/notification.service';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Events')
 @Controller('events')
 export class EventsController {
   constructor(

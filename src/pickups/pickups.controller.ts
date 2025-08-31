@@ -1,13 +1,15 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
-import { PickupsService } from './pickups.service';
+import { ApiTags } from '@nestjs/swagger';
+import { eq } from 'drizzle-orm';
 import { db } from '../db/client';
 import {
   pickups as PickupsTbl,
   pickupShipments as PS,
   shipments as ShipmentsTbl,
 } from '../db/schema';
-import { eq } from 'drizzle-orm';
+import { PickupsService } from './pickups.service';
 
+@ApiTags('Pickups')
 @Controller('pickups')
 export class PickupsController {
   constructor(private pickups: PickupsService) {}

@@ -6,7 +6,9 @@ import {
   events as EventsTbl,
 } from '../db/schema';
 import { eq } from 'drizzle-orm';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('EasyPost Webhooks')
 @Controller('webhooks/easypost')
 export class EasyPostWebhookController {
   @Post()
