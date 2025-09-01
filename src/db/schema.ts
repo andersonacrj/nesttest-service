@@ -1,13 +1,13 @@
 import {
-  pgTable,
-  serial,
-  varchar,
-  timestamp,
   boolean,
   integer,
-  pgEnum,
-  text,
   jsonb,
+  pgEnum,
+  pgTable,
+  serial,
+  text,
+  timestamp,
+  varchar,
 } from 'drizzle-orm/pg-core';
 
 export const eventTypeEnum = pgEnum('event_type', [
@@ -47,6 +47,9 @@ export const orders = pgTable('orders', {
   patientEmail: varchar('patient_email', { length: 320 }).notNull(),
   patientAddress: text('patient_address'),
   barcode: varchar('barcode', { length: 128 }),
+  labName: varchar('lab_name', { length: 256 }).notNull(),
+  labAddress: text('lab_address'),
+  labEmail: varchar('lab_email', { length: 320 }).notNull(),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
 });
 

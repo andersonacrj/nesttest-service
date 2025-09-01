@@ -4,6 +4,10 @@ import { Request, Response } from 'express';
 import 'reflect-metadata';
 import { AppModule } from './app.module';
 import { cfg } from './config/config';
+import * as dotenv from 'dotenv';
+
+// Carrega as variáveis de ambiente ANTES de qualquer coisa
+dotenv.config();
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);

@@ -16,6 +16,9 @@ export class OrdersController {
       patientEmail: string;
       patientAddress: string;
       barcode?: string;
+      labName: string;
+      labAddress: string;
+      labEmail: string;
     },
   ) {
     return await this.orders.create(body);

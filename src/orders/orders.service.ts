@@ -16,6 +16,9 @@ export class OrdersService {
     patientEmail: string;
     patientAddress: string;
     barcode?: string;
+    labName: string;
+    labAddress: string;
+    labEmail: string;
   }) {
     const [o] = await db
       .insert(orders)
