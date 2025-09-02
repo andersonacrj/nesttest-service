@@ -2,7 +2,7 @@ export const cfg = () => ({
   port: parseInt(process.env.PORT ?? '3000', 10),
   databaseUrl: process.env.DATABASE_URL!,
   resendApiKey: process.env.RESEND_API_KEY!,
-  resendFrom: process.env.RESEND_FROM ?? 'NestTest <no-reply@nesttest.com>',
+  resendFrom: process.env.RESEND_FROM ?? 'NestTest <no-reply@nesttest.online>',
   resendBcc: process.env.RESEND_BCC ?? '',
   slackBotToken: process.env.SLACK_BOT_TOKEN!,
   slackChannelId: process.env.SLACK_CHANNEL_ID!,
@@ -32,4 +32,11 @@ export const cfg = () => ({
   },
   webhookSecret: process.env.WEBHOOK_SECRET ?? 'dev-secret',
   appBaseUrl: process.env.APP_BASE_URL ?? 'http://localhost:3000',
+  whatsapp: {
+    enabled: (process.env.WHATSAPP_ENABLED ?? 'false').toLowerCase() === 'true',
+    accountSid: process.env.TWILIO_ACCOUNT_SID ?? '',
+    authToken: process.env.TWILIO_AUTH_TOKEN ?? '',
+    from: process.env.WHATSAPP_FROM ?? '',
+    fallbackTo: process.env.WHATSAPP_FALLBACK_TO ?? ''
+  }
 });

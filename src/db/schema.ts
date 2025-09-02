@@ -45,6 +45,7 @@ export const orders = pgTable('orders', {
   providerCode: varchar('provider_code', { length: 128 }),
   patientName: varchar('patient_name', { length: 256 }).notNull(),
   patientEmail: varchar('patient_email', { length: 320 }).notNull(),
+  patientPhone: varchar('patient_phone', { length: 32 }), // E.164 max length is 15, but allow extra for formatting
   patientAddress: text('patient_address'),
   barcode: varchar('barcode', { length: 128 }),
   labName: varchar('lab_name', { length: 256 }).notNull(),

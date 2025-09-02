@@ -4,7 +4,7 @@ import { and, eq } from 'drizzle-orm';
 
 export async function alreadyNotified(
   eventId: number,
-  channel: 'email' | 'slack',
+  channel: 'email' | 'slack' | 'whatsapp',
 ) {
   const rows = await db
     .select()

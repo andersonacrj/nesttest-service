@@ -28,7 +28,6 @@ import postgres from 'postgres';
 import { cfg } from 'src/config/config';
 import * as dotenv from 'dotenv';
 
-// Carrega as variáveis de ambiente
 dotenv.config();
 
 console.log('Database URL:', cfg().databaseUrl);
